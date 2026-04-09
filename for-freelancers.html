@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Freelancers — InnFill | Build Your Freelance Career</title>
+  <meta name="description" content="Discover how InnFill helps freelancers grow their careers in India. Build your portfolio, find great clients, and get paid securely." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .skill-tag {
+      padding: 8px 16px; border-radius: 99px;
+      background: var(--surface); border: 1px solid var(--border);
+      font-size: 0.85rem; font-weight: 500; color: var(--text-sub);
+      transition: var(--transition); cursor: default;
+    }
+    .skill-tag:hover { border-color: var(--border-glow); color: var(--blue-light); }
+    .earnings-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 40px; text-align: center;
+      transition: var(--transition);
+    }
+    .earnings-card:hover { border-color: var(--border-glow); transform: translateY(-6px); }
+    .earnings-amount { font-family: var(--font-head); font-size: 2.5rem; font-weight: 800; color: var(--text); margin-bottom: 4px; }
+    .earnings-label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px; }
+    .earnings-bar { height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; margin-bottom: 12px; }
+    .earnings-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--blue), var(--cyan)); transition: width 1.5s cubic-bezier(0.4,0,0.2,1); width: 0; }
+    .earnings-card.visible .earnings-fill { width: var(--fill); }
+    .tips-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    @media (max-width: 768px) { .tips-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">INN<span>FILL</span></a>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="for-freelancers.html" class="active">For Freelancers</a></li>
+        <li><a href="for-clients.html">For Clients</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://innfill.in/login" class="nav-sign-in">Sign In</a>
+        <a href="https://innfill.in/register" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="for-freelancers.html">For Freelancers</a>
+    <a href="for-clients.html">For Clients</a>
+    <div class="nav-actions">
+      <a href="https://innfill.in/login" class="btn btn-secondary">Sign In</a>
+      <a href="https://innfill.in/register" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="page-hero" style="position:relative;overflow:hidden;">
+    <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;opacity:0.5;" aria-hidden="true"></canvas>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,transparent 0%,var(--bg) 70%);z-index:1;"></div>
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="badge">✦ For Freelancers</div>
+      <h1>Your Skills. Your <span class="gradient-text">Income.</span></h1>
+      <p>InnFill is built for Indian freelancers who want real clients, real work, and real pay — on their own schedule.</p>
+      <div style="margin-top:36px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;">
+        <a href="https://innfill.in/register" class="btn btn-primary btn-lg" id="fl-hero-btn">Start Freelancing Free</a>
+        <a href="pricing.html" class="btn btn-secondary btn-lg" id="fl-pricing-btn">See Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">✦ Why InnFill</div>
+        <h2>Everything Built <span class="gradient-text">For You</span></h2>
+        <p>Tools and features designed to help freelancers thrive.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal reveal-d1">
+          <div class="feature-icon">🎯</div>
+          <h3>Smart Project Matching</h3>
+          <p>Our algorithm recommends projects perfectly suited to your skills, experience level, and availability.</p>
+        </div>
+        <div class="feature-card reveal reveal-d2">
+          <div class="feature-icon">💼</div>
+          <h3>Professional Portfolio</h3>
+          <p>Showcase your best work with a stunning profile. Let your portfolio do the selling for you.</p>
+        </div>
+        <div class="feature-card reveal reveal-d3">
+          <div class="feature-icon">💰</div>
+          <h3>Guaranteed Payments</h3>
+          <p>Never chase a payment again. Escrow ensures you get paid for every approved deliverable.</p>
+        </div>
+        <div class="feature-card reveal reveal-d1">
+          <div class="feature-icon">📊</div>
+          <h3>Earnings Dashboard</h3>
+          <p>Track your earnings, project history, proposal success rates, and profile visibility in real-time.</p>
+        </div>
+        <div class="feature-card reveal reveal-d2">
+          <div class="feature-icon">⭐</div>
+          <h3>Build Your Reputation</h3>
+          <p>Every completed project adds to your verified track record. A 5-star reputation opens better doors.</p>
+        </div>
+        <div class="feature-card reveal reveal-d3">
+          <div class="feature-icon">🕐</div>
+          <h3>Work On Your Terms</h3>
+          <p>Choose your own hours, rates, and project types. InnFill gives you freedom without the instability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARNING POTENTIAL -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">✦ Earning Potential</div>
+        <h2>What Top Freelancers <span class="gradient-text">Earn on InnFill</span></h2>
+        <p>Earnings vary by skill and experience. Here's what's possible:</p>
+      </div>
+      <div class="features-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="earnings-card reveal reveal-d1">
+          <div class="earnings-amount">₹25,000</div>
+          <div class="earnings-label">Avg. monthly — Beginners</div>
+          <div class="earnings-bar"><div class="earnings-fill" style="--fill:35%"></div></div>
+          <p style="font-size:0.85rem;">Just starting out. Build your profile and land your first clients.</p>
+        </div>
+        <div class="earnings-card reveal">
+          <div class="earnings-amount">₹75,000</div>
+          <div class="earnings-label">Avg. monthly — Intermediate</div>
+          <div class="earnings-bar"><div class="earnings-fill" style="--fill:65%"></div></div>
+          <p style="font-size:0.85rem;">With a strong portfolio and reviews, work floods in consistently.</p>
+        </div>
+        <div class="earnings-card reveal reveal-d2">
+          <div class="earnings-amount">₹2L+</div>
+          <div class="earnings-label">Avg. monthly — Expert</div>
+          <div class="earnings-bar"><div class="earnings-fill" style="--fill:90%"></div></div>
+          <p style="font-size:0.85rem;">Top-rated freelancers command premium rates and repeat clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IN DEMAND SKILLS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">✦ In-Demand Skills</div>
+        <h2>High-Paying Freelance <span class="gradient-text">Skills</span></h2>
+        <p>These skill categories are seeing the highest demand on InnFill right now.</p>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-tag">🌐 Web Development</div>
+        <div class="skill-tag">📱 Mobile App Development</div>
+        <div class="skill-tag">🎨 UI/UX Design</div>
+        <div class="skill-tag">✍️ Content Writing</div>
+        <div class="skill-tag">📊 Data Science</div>
+        <div class="skill-tag">🤖 Machine Learning / AI</div>
+        <div class="skill-tag">📣 Digital Marketing</div>
+        <div class="skill-tag">🎬 Video Editing</div>
+        <div class="skill-tag">🖼️ Graphic Design</div>
+        <div class="skill-tag">⛓️ Blockchain Development</div>
+        <div class="skill-tag">☁️ Cloud & DevOps</div>
+        <div class="skill-tag">🔒 Cybersecurity</div>
+        <div class="skill-tag">📦 Product Management</div>
+        <div class="skill-tag">🗣️ SEO & SEM</div>
+        <div class="skill-tag">🎙️ Voice & Audio</div>
+        <div class="skill-tag">📷 Photography</div>
+        <div class="skill-tag">💬 Social Media Management</div>
+        <div class="skill-tag">🧪 QA & Testing</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">✦ Pro Tips</div>
+        <h2>How to <span class="gradient-text">Stand Out</span></h2>
+      </div>
+      <div class="tips-grid">
+        <div class="feature-card reveal reveal-d1">
+          <div class="feature-icon">🖋️</div>
+          <h3>Perfect Your Profile</h3>
+          <p>A complete profile with a clear bio, skills, and portfolio samples gets 5× more views than incomplete ones.</p>
+        </div>
+        <div class="feature-card reveal reveal-d2">
+          <div class="feature-icon">📝</div>
+          <h3>Write Tailored Proposals</h3>
+          <p>Generic proposals get ignored. Show the client you've read their brief and explain exactly how you'll help them.</p>
+        </div>
+        <div class="feature-card reveal reveal-d3">
+          <div class="feature-icon">🌟</div>
+          <h3>Collect Great Reviews</h3>
+          <p>Always deliver on time, communicate proactively, and ask satisfied clients to leave a review. Reviews build trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--sm" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-section reveal">
+        <canvas id="cta-canvas" aria-hidden="true"></canvas>
+        <div class="cta-content">
+          <h2>Start Your Freelance Career <span class="gradient-text">Today</span></h2>
+          <p>Join thousands of Indian freelancers already earning on InnFill — for free.</p>
+          <div class="cta-actions">
+            <a href="https://innfill.in/register" class="btn btn-primary btn-lg" id="fl-cta-btn">Create Your Profile Free</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">INN<span>FILL</span></a>
+          <p>India's next-generation freelance marketplace.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link">𝕏</a>
+            <a href="#" class="social-link">📸</a>
+            <a href="#" class="social-link">in</a>
+          </div>
+        </div>
+        <div class="footer-col"><h5>Platform</h5><ul>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="for-freelancers.html">For Freelancers</a></li>
+          <li><a href="for-clients.html">For Clients</a></li>
+        </ul></div>
+        <div class="footer-col"><h5>Company</h5><ul>
+          <li><a href="https://innfill.in/about">About</a></li>
+          <li><a href="https://innfill.in/blog">Blog</a></li>
+          <li><a href="https://innfill.in/contact">Contact</a></li>
+        </ul></div>
+        <div class="footer-col"><h5>Legal</h5><ul>
+          <li><a href="https://innfill.in/privacy">Privacy Policy</a></li>
+          <li><a href="https://innfill.in/terms">Terms</a></li>
+          <li><a href="https://innfill.in/refund">Refund Policy</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 InnFill. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Animate earnings bars on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.earnings-card').forEach(c => observer.observe(c));
+  </script>
+</body>
+</html>

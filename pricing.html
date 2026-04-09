@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — InnFill | Transparent Platform Fees</title>
+  <meta name="description" content="InnFill charges a simple 14% platform fee plus GST. No hidden charges. See exactly what you earn on every project." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">INN<span>FILL</span></a>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="for-freelancers.html">For Freelancers</a></li>
+        <li><a href="for-clients.html">For Clients</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://innfill.in/login" class="nav-sign-in">Sign In</a>
+        <a href="https://innfill.in/register" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-menu-close" id="mobile-menu-close">✕</button>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="for-freelancers.html">For Freelancers</a>
+    <a href="for-clients.html">For Clients</a>
+    <div class="nav-actions">
+      <a href="https://innfill.in/login" class="btn btn-secondary">Sign In</a>
+      <a href="https://innfill.in/register" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="badge">✦ Transparent Pricing</div>
+      <h1>Simple, <span class="gradient-text">honest</span> fees</h1>
+      <p>One flat fee. No surprises. No subscriptions. You only pay when you earn.</p>
+    </div>
+  </section>
+
+  <!-- PRICING CARDS -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="pricing-grid">
+
+        <div class="pricing-card reveal reveal-d1">
+          <div class="pricing-label">For Freelancers</div>
+          <div class="pricing-value">Free <span>to join</span></div>
+          <div class="pricing-desc">Create your profile and start bidding — at zero cost.</div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Free registration & profile</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Unlimited project browsing</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Portfolio showcase</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Built-in messaging</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> 14% commission on earnings</div>
+            <div class="pricing-feature"><span style="color:var(--text-muted)">○</span> 18% GST on commission</div>
+          </div>
+          <a href="https://innfill.in/register" class="btn btn-secondary" id="pricing-freelancer-btn">Join as Freelancer</a>
+        </div>
+
+        <div class="pricing-card featured reveal">
+          <div class="pricing-label">Platform Commission</div>
+          <div class="pricing-value">14<span>%</span></div>
+          <div class="pricing-desc">Charged on the total project value. Only when a project completes successfully.</div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Escrow-protected payments</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> AI-powered matching</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Real-time collaboration tools</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Analytics & insights</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Dispute resolution support</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> 24/7 platform support</div>
+          </div>
+          <a href="https://innfill.in/register" class="btn btn-primary" id="pricing-main-btn">Get Started Free</a>
+        </div>
+
+        <div class="pricing-card reveal reveal-d2">
+          <div class="pricing-label">For Clients</div>
+          <div class="pricing-value">Free <span>to post</span></div>
+          <div class="pricing-desc">Post projects and receive proposals at no charge. Pay only for approved work.</div>
+          <div class="pricing-features">
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Free project posting</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Browse freelancer profiles</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Escrow payment security</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Project tracking tools</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Revision requests</div>
+            <div class="pricing-feature"><span class="pricing-check">✓</span> Dispute protection</div>
+          </div>
+          <a href="https://innfill.in/register?type=client" class="btn btn-secondary" id="pricing-client-btn">Post a Project</a>
+        </div>
+
+      </div>
+
+      <!-- BREAKDOWN TABLE -->
+      <div class="pricing-breakdown reveal">
+        <h3>💡 Earnings Calculator Example</h3>
+        <p style="margin-top:8px;font-size:0.9rem;">Here's exactly what a freelancer earns on a ₹10,000 project:</p>
+        <table class="breakdown-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Amount (₹)</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Project Value (Client Pays)</td>
+              <td>₹10,000</td>
+              <td>Deposited into escrow</td>
+            </tr>
+            <tr>
+              <td>Platform Commission (14%)</td>
+              <td>− ₹1,400</td>
+              <td>InnFill's service fee</td>
+            </tr>
+            <tr>
+              <td>GST on Commission (18%)</td>
+              <td>− ₹252</td>
+              <td>18% of ₹1,400</td>
+            </tr>
+            <tr class="highlight-row">
+              <td><strong>Freelancer Receives</strong></td>
+              <td class="green"><strong>₹8,348</strong></td>
+              <td><strong>Transferred via Razorpay</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- COMPARISON -->
+      <div style="margin-top:60px;" class="reveal">
+        <div class="section-header" style="margin-bottom:40px;">
+          <h2>How We Compare</h2>
+          <p>See why freelancers choose InnFill over other platforms.</p>
+        </div>
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;">
+          <table class="breakdown-table" style="margin-top:0;">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th style="color:var(--blue-light);">InnFill</th>
+                <th>Upwork</th>
+                <th>Fiverr</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Platform Fee</td>
+                <td style="color:var(--blue-light);font-weight:600;">14%</td>
+                <td>10–20%</td>
+                <td>20%</td>
+              </tr>
+              <tr>
+                <td>Escrow Protection</td>
+                <td style="color:#34D399;">✓ Yes</td>
+                <td style="color:#34D399;">✓ Yes</td>
+                <td style="color:#34D399;">✓ Yes</td>
+              </tr>
+              <tr>
+                <td>Built-in Chat</td>
+                <td style="color:#34D399;">✓ Yes</td>
+                <td style="color:#34D399;">✓ Yes</td>
+                <td style="color:#34D399;">✓ Yes</td>
+              </tr>
+              <tr>
+                <td>INR Payments</td>
+                <td style="color:#34D399;">✓ Native</td>
+                <td>Conversion fees</td>
+                <td>Conversion fees</td>
+              </tr>
+              <tr>
+                <td>Indian Tax Compliance</td>
+                <td style="color:#34D399;">✓ Fully Compliant</td>
+                <td>Partial</td>
+                <td>Partial</td>
+              </tr>
+              <tr>
+                <td>Analytics Dashboard</td>
+                <td style="color:#34D399;">✓ Included</td>
+                <td style="color:#34D399;">✓ Included</td>
+                <td style="color:#F59E0B;">Limited</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Pricing <span class="gradient-text">FAQs</span></h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-question">When is the commission charged?
+            <div class="faq-chevron"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></div>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">The commission is deducted automatically when the client releases payment from escrow. There are no upfront fees to browse or bid.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">Does the client pay extra on top of 14%?
+            <div class="faq-chevron"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></div>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">No. The 14% commission (plus GST) is deducted from the freelancer's payment. Clients pay exactly the agreed project amount — nothing more.</div></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">Is the GST included in the 14%?
+            <div class="faq-chevron"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></div>
+          </div>
+          <div class="faq-answer"><div class="faq-answer-inner">No. GST (18%) is applied separately on top of the 14% commission as per Indian tax regulations. So the total deduction is 14% + (18% of 14%) = 16.52% of the project value.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--sm" style="padding-top:0;">
+    <div class="container">
+      <div class="cta-section reveal">
+        <canvas id="cta-canvas" aria-hidden="true"></canvas>
+        <div class="cta-content">
+          <h2>Ready to <span class="gradient-text">Get Started?</span></h2>
+          <p>Join free. Pay only when you succeed.</p>
+          <div class="cta-actions">
+            <a href="https://innfill.in/register" class="btn btn-primary btn-lg" id="pricing-cta-btn">Create Free Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">INN<span>FILL</span></a>
+          <p>India's next-generation freelance marketplace.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link">𝕏</a>
+            <a href="#" class="social-link">📸</a>
+            <a href="#" class="social-link">in</a>
+          </div>
+        </div>
+        <div class="footer-col"><h5>Platform</h5><ul>
+          <li><a href="how-it-works.html">How It Works</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="for-freelancers.html">For Freelancers</a></li>
+          <li><a href="for-clients.html">For Clients</a></li>
+        </ul></div>
+        <div class="footer-col"><h5>Company</h5><ul>
+          <li><a href="https://innfill.in/about">About</a></li>
+          <li><a href="https://innfill.in/blog">Blog</a></li>
+          <li><a href="https://innfill.in/contact">Contact</a></li>
+        </ul></div>
+        <div class="footer-col"><h5>Legal</h5><ul>
+          <li><a href="https://innfill.in/privacy">Privacy Policy</a></li>
+          <li><a href="https://innfill.in/terms">Terms</a></li>
+          <li><a href="https://innfill.in/refund">Refund Policy</a></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 InnFill. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
