@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InnFill — Connect, Create, Collaborate | India's Freelance Marketplace</title>
+  <meta name="description" content="InnFill connects talented Indian freelancers with clients. Post projects, find experts, collaborate in real-time, and pay securely with escrow-protected payments." />
+  <link rel="canonical" href="https://innfill.in/" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo">INN<span>FILL</span></a>
+      <ul class="nav-links">
+        <li><a href="how-it-works.html">How It Works</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="for-freelancers.html">For Freelancers</a></li>
+        <li><a href="for-clients.html">For Clients</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://innfill.in/login" class="nav-sign-in">Sign In</a>
+        <a href="https://innfill.in/register" class="btn btn-primary">Get Started</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true">
+    <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="for-freelancers.html">For Freelancers</a>
+    <a href="for-clients.html">For Clients</a>
+    <div class="nav-actions">
+      <a href="https://innfill.in/login" class="btn btn-secondary">Sign In</a>
+      <a href="https://innfill.in/register" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <section class="hero" id="home" aria-label="Hero section">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">India's Next-Gen Freelance Platform</div>
+      <h1>Where Great Work<br><span class="gradient-text">Gets Done</span></h1>
+      <p class="hero-sub">
+        Connect with top freelancers or find your next dream project.
+        Secure payments, smart matching, and real-time collaboration — all in one place.
+      </p>
+      <div class="hero-actions">
+        <a href="https://innfill.in/register" class="btn btn-primary btn-lg" id="hero-cta-primary">
+          Start For Free
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+        <a href="how-it-works.html" class="btn btn-secondary btn-lg" id="hero-cta-secondary">See How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat-item">
+          <span class="hero-stat-num" data-count="5000" data-suffix="+">0</span>
+          <span class="hero-stat-label">Freelancers</span>
+        </div>
+        <div class="hero-divider" aria-hidden="true"></div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-num" data-count="1200" data-suffix="+">0</span>
+          <span class="hero-stat-label">Projects Completed</span>
+        </div>
+        <div class="hero-divider" aria-hidden="true"></div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-num" data-count="98" data-suffix="%">0</span>
+          <span class="hero-stat-label">Client Satisfaction</span>
+        </div>
+        <div class="hero-divider" aria-hidden="true"></div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-num" data-count="4.9" data-suffix="★">0</span>
+          <span class="hero-stat-label">Average Rating</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       MARQUEE
+  ════════════════════════════════════════ -->
+  <div class="marquee-section" aria-hidden="true">
+    <div class="marquee-track">
+      <!-- Duplicated for seamless loop -->
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Web Development</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> UI/UX Design</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Mobile Apps</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Content Writing</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Data Science</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Digital Marketing</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Video Editing</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Graphic Design</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> AI / ML</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Blockchain</div>
+      <!-- Duplicate -->
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Web Development</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> UI/UX Design</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Mobile Apps</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Content Writing</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Data Science</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Digital Marketing</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Video Editing</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Graphic Design</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> AI / ML</div>
+      <div class="marquee-item"><svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="4"/></svg> Blockchain</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       HOW IT WORKS
+  ════════════════════════════════════════ -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">✦ Simple Process</div>
+        <h2>How <span class="gradient-text">InnFill</span> Works</h2>
+        <p>From registration to payment — everything flows seamlessly in four steps.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal reveal-d1">
+          <div class="step-num">01</div>
+          <div class="step-icon">🚀</div>
+          <h4>Create Your Profile</h4>
+          <p>Sign up as a freelancer or client. Build your portfolio or post your first project in minutes.</p>
+        </div>
+        <div class="step-card reveal reveal-d2">
+          <div class="step-num">02</div>
+          <div class="step-icon">🎯</div>
+          <h4>Smart Matching</h4>
+          <p>Our algorithm matches clients with the right freelancers based on skills, ratings, and availability.</p>
+        </div>
+        <div class="step-card reveal reveal-d3">
+          <div class="step-num">03</div>
+          <div class="step-icon">💬</div>
+          <h4>Collaborate in Real-Time</h4>
+          <p>Chat, share files, track milestones, and deliver work — all within the InnFill workspace.</p>
+        </div>
+        <div class="step-card reveal reveal-d4">
+          <div class="step-num">04</div>
+          <div class="step-icon">🔒</div>
+          <h4>Secure Payment</h4>
+          <p>Escrow-protected payments via Razorpay. Funds release only when the client approves the work.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:48px;" class="reveal">
+        <a href="how-it-works.html" class="btn btn-secondary" id="hiw-more-link">Learn More About the Process</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FEATURES
+  ════════════════════════════════════════ -->
+  <section class="section" id="features" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">✦ Platform Features</div>
+        <h2>Everything You Need to <span class="gradient-text">Succeed</span></h2>
+        <p>Powerful tools built for the modern freelance economy.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal reveal-d1">
+          <div class="feature-icon">🧠</div>
+          <h3>AI-Powered Matching</h3>
+          <p>Intelligent skill-based algorithms connect the right freelancer to the right project — instantly.</p>
+        </div>
+        <div class="feature-card reveal reveal-d2">
+          <div class="feature-icon">🔐</div>
+          <h3>Escrow Payments</h3>
+          <p>Client funds are held securely until work is approved. Zero risk for both parties via Razorpay.</p>
+        </div>
+        <div class="feature-card reveal reveal-d3">
+          <div class="feature-icon">💬</div>
+          <h3>Real-Time Chat</h3>
+          <p>Built-in messaging with file sharing. Stay connected from proposal to project delivery.</p>
+        </div>
+        <div class="feature-card reveal reveal-d1">
+          <div class="feature-icon">📊</div>
+          <h3>Analytics Dashboard</h3>
+          <p>Track earnings, project performance, and profile views with rich analytics built right in.</p>
+        </div>
+        <div class="feature-card reveal reveal-d2">
+          <div class="feature-icon">🗂️</div>
+          <h3>Portfolio Showcase</h3>
+          <p>Build a stunning portfolio, highlight top projects, and get discovered by premium clients.</p>
+        </div>
+        <div class="feature-card reveal reveal-d3">
+          <div class="feature-icon">⭐</div>
+          <h3>Verified Reviews</h3>
+          <p>Transparent, tamper-proof ratings help clients find the best talent and freelancers build trust.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       STATS
+  ════════════════════════════════════════ -->
+  <section class="section section--sm">
+    <div class="container">
+      <div class="stats-band reveal">
+        <div class="stat-item">
+          <span class="stat-num"><span data-count="5000" data-suffix="+">0</span></span>
+          <div class="stat-label">Registered Freelancers</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num"><span data-count="1200" data-suffix="+">0</span></span>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num"><span data-count="50" data-suffix="+">0</span></span>
+          <div class="stat-label">Skill Categories</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num"><span data-count="98" data-suffix="%">0</span></span>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOR FREELANCERS
+  ════════════════════════════════════════ -->
+  <section class="section" id="freelancers">
+    <div class="container">
+      <div class="split-section">
+        <div class="split-text reveal-left">
+          <div class="badge">✦ For Freelancers</div>
+          <h2>Your Skills. <span class="gradient-text">Your Income.</span></h2>
+          <p>InnFill gives you the tools and clients to build a thriving freelance career on your own terms.</p>
+          <div class="split-list">
+            <div class="split-list-item">
+              <div class="split-list-icon">🎯</div>
+              <div>
+                <h4>Get Discovered</h4>
+                <p>Your profile gets in front of thousands of active clients looking for your exact skills.</p>
+              </div>
+            </div>
+            <div class="split-list-item">
+              <div class="split-list-icon">💰</div>
+              <div>
+                <h4>Earn More</h4>
+                <p>Set your own rates. Bid on projects. Get paid securely — no payment risk, ever.</p>
+              </div>
+            </div>
+            <div class="split-list-item">
+              <div class="split-list-icon">📈</div>
+              <div>
+                <h4>Grow Your Reputation</h4>
+                <p>Build a verified track record of completed projects, 5-star reviews, and portfolio work.</p>
+              </div>
+            </div>
+          </div>
+          <a href="for-freelancers.html" class="btn btn-primary" id="freelancer-cta">Start Freelancing →</a>
+        </div>
+        <div class="split-visual reveal-right">
+          <div class="split-canvas-wrap">
+            <canvas id="freelancer-canvas" aria-hidden="true"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOR CLIENTS
+  ════════════════════════════════════════ -->
+  <section class="section" id="clients" style="padding-top:0;">
+    <div class="container">
+      <div class="split-section reverse">
+        <div class="split-text reveal-right">
+          <div class="badge">✦ For Clients</div>
+          <h2>Hire Smarter. <span class="gradient-text">Build Faster.</span></h2>
+          <p>Access a curated pool of verified Indian freelancers across 50+ skill categories — ready to start today.</p>
+          <div class="split-list">
+            <div class="split-list-item">
+              <div class="split-list-icon">⚡</div>
+              <div>
+                <h4>Post in Minutes</h4>
+                <p>Describe your project, set your budget, and receive proposals from qualified freelancers fast.</p>
+              </div>
+            </div>
+            <div class="split-list-item">
+              <div class="split-list-icon">🛡️</div>
+              <div>
+                <h4>Risk-Free Payments</h4>
+                <p>Funds are held in escrow. You only pay when you're fully satisfied with the delivered work.</p>
+              </div>
+            </div>
+            <div class="split-list-item">
+              <div class="split-list-icon">🤝</div>
+              <div>
+                <h4>Dedicated Support</h4>
+                <p>Our team is here to help mediate disputes, answer questions, and ensure smooth delivery.</p>
+              </div>
+            </div>
+          </div>
+          <a href="for-clients.html" class="btn btn-primary" id="client-cta">Post a Project →</a>
+        </div>
+        <div class="split-visual reveal-left">
+          <div class="split-canvas-wrap">
+            <canvas id="client-canvas" aria-hidden="true"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════════ -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">✦ What People Say</div>
+        <h2>Trusted by <span class="gradient-text">Thousands</span></h2>
+        <p>Real people. Real projects. Real results.</p>
+      </div>
+      <div class="testimonials-track">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"InnFill completely changed how I find clients. The escrow system gives me total peace of mind — I've never had a payment issue."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AR</div>
+            <div>
+              <div class="author-name">Arjun Reddy</div>
+              <div class="author-role">Full-Stack Developer, Hyderabad</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"We hired three designers through InnFill in one week. The matching was spot on and the quality was exceptional. We're now using it for all our projects."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">PM</div>
+            <div>
+              <div class="author-name">Priya Mehta</div>
+              <div class="author-role">Product Manager, Bengaluru</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"As a content writer, InnFill gave me consistent work and a platform to showcase my portfolio. My income grew 3x in six months!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SK</div>
+            <div>
+              <div class="author-name">Sneha Kumar</div>
+              <div class="author-role">Content Strategist, Pune</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"The built-in chat and file sharing made collaborating with our remote freelancer seamless. InnFill is streets ahead of other platforms."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">VN</div>
+            <div>
+              <div class="author-name">Vikram Nair</div>
+              <div class="author-role">Startup Founder, Mumbai</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"I loved how transparent the process is. From bidding to delivery, everything is tracked. No surprises, no confusion."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">DP</div>
+            <div>
+              <div class="author-name">Divya Pillai</div>
+              <div class="author-role">UI/UX Designer, Chennai</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-nav">
+        <div class="testimonial-dot active"></div>
+        <div class="testimonial-dot"></div>
+        <div class="testimonial-dot"></div>
+        <div class="testimonial-dot"></div>
+        <div class="testimonial-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FAQ
+  ════════════════════════════════════════ -->
+  <section class="section" id="faq" style="padding-top:0;">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="badge">✦ FAQs</div>
+        <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p>Everything you need to know before you start.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            How does InnFill's payment protection work?
+            <div class="faq-chevron">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              When a client hires a freelancer, the agreed project amount is deposited into an escrow account powered by Razorpay. The funds are only released to the freelancer after the client reviews and approves the delivered work. This protects both parties — freelancers know they'll get paid, and clients know they'll only pay for completed, approved work.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            What is InnFill's platform fee?
+            <div class="faq-chevron">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              InnFill charges a 14% platform commission on the total project value, plus 18% GST on the commission amount. For example, on a ₹10,000 project: the commission is ₹1,400, GST is ₹252, and the freelancer receives ₹8,348. See our <a href="pricing.html" style="color:var(--blue-light)">Pricing page</a> for a full breakdown.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            Can I cancel a project after it starts?
+            <div class="faq-chevron">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Either party can request cancellation. If cancelled before the freelancer begins work, the full escrow amount is refunded to the client. If work has started, the refund is determined by our dispute resolution process. See the <a href="how-it-works.html" style="color:var(--blue-light)">How It Works</a> page for full cancellation policies.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            How quickly can I find a freelancer for my project?
+            <div class="faq-chevron">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Most projects receive their first proposals within a few hours of posting. You can also browse freelancer profiles directly and send invitations. For urgent projects, use our priority matching feature.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            Is InnFill free to join?
+            <div class="faq-chevron">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </div>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes — creating an account on InnFill is completely free for both freelancers and clients. You only pay the platform fee when a project is successfully completed.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CTA BANNER
+  ════════════════════════════════════════ -->
+  <section class="section section--sm">
+    <div class="container">
+      <div class="cta-section reveal">
+        <canvas id="cta-canvas" aria-hidden="true"></canvas>
+        <div class="cta-content">
+          <div class="badge" style="margin:0 auto 20px;">✦ Join InnFill Today</div>
+          <h2>Ready to Start Your <span class="gradient-text">Journey?</span></h2>
+          <p>Join thousands of freelancers and clients already building the future together on InnFill.</p>
+          <div class="cta-actions">
+            <a href="https://innfill.in/register" class="btn btn-primary btn-lg" id="cta-freelancer-btn">I'm a Freelancer</a>
+            <a href="https://innfill.in/register?type=client" class="btn btn-secondary btn-lg" id="cta-client-btn">I'm a Client</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">INN<span>FILL</span></a>
+          <p>India's next-generation freelance marketplace — connecting talent with opportunity through smart technology and secure payments.</p>
+          <div class="footer-socials">
+            <a href="https://twitter.com/innfill" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">𝕏</a>
+            <a href="https://instagram.com/innfill" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">📸</a>
+            <a href="https://linkedin.com/company/innfill" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">in</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <ul>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="for-freelancers.html">For Freelancers</a></li>
+            <li><a href="for-clients.html">For Clients</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="https://innfill.in/about">About Us</a></li>
+            <li><a href="https://innfill.in/blog">Blog</a></li>
+            <li><a href="https://innfill.in/careers">Careers</a></li>
+            <li><a href="https://innfill.in/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <ul>
+            <li><a href="https://innfill.in/privacy">Privacy Policy</a></li>
+            <li><a href="https://innfill.in/terms">Terms of Service</a></li>
+            <li><a href="https://innfill.in/refund">Refund Policy</a></li>
+            <li><a href="https://innfill.in/cookies">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2024 InnFill. All rights reserved.</span>
+        <div style="display:flex;gap:20px;">
+          <a href="https://innfill.in/privacy">Privacy</a>
+          <a href="https://innfill.in/terms">Terms</a>
+          <a href="https://innfill.in/sitemap">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
